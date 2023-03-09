@@ -1,0 +1,30 @@
+package core.enumtypes;
+
+public enum PayloadType {
+    tongweblistenermemshell,
+    glassfishlistenermemshell,
+    fastjsonlistenermemshell,
+    tongwebfiltermemshell,
+    glassfishfiltermemshell,
+    fastjsonfiltermemshell,
+    tomcatlistenermemshell,
+    tomcatfiltermemshell,
+    springbootmemshell,
+    jbossfiltermemshell,
+    jbosslistenermemshell,
+    shiromemshell,
+    weblogiclistenermemshell_cve_2020_14756,
+    weblogicfiltermemshell_cve_2020_14756,
+    none,
+    command,
+    resinlistenermemshell,
+    resinfiltermemshell,
+    commandmemshell,
+    weblogiclistenermemshell,
+    jettylistenermemshell,
+    jettyfiltermemshell,
+    weblogicfiltermemshell,
+    weblogicmemshell_cve_2020_14883,
+    springwebfluxhandlermemshell,
+    nettyhandlermemshell
+}

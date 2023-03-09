@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.Controller">
+   <children>
+      <TabPane layoutY="-1.0" prefHeight="600.0" prefWidth="1200.0" style="-fx-font-size: 18;" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab text="Attack">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="1200.0">
+                     <children>
+                        <Label layoutX="20.0" layoutY="31.0" text="Target URL：">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="target" layoutX="134.0" layoutY="27.0" minHeight="0.0" minWidth="0.0" prefHeight="34.0" prefWidth="402.0" />
+                        <Label layoutX="556.0" layoutY="31.0" text="Module:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="856.0" layoutY="31.0" text="Exp:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="modules" layoutX="641.0" layoutY="27.0" prefHeight="33.0" prefWidth="191.0" />
+                        <ComboBox fx:id="exps" layoutX="917.0" layoutY="27.0" prefHeight="33.0" prefWidth="265.0" />
+                        <Pane fx:id="expPane" blendMode="SRC_ATOP" layoutX="20.0" layoutY="67.0" prefHeight="483.0" prefWidth="1163.0" style="-fx-background-radius: 6;">
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                           <rotationAxis>
+                              <Point3D x="1.0" y="1.0" z="1.0" />
+                           </rotationAxis>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="JNDI">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="18.0" layoutY="37.0" text="IP：">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="jndiIP" layoutX="56.0" layoutY="32.0" prefHeight="35.0" prefWidth="185.0" />
+                        <Label layoutX="254.0" layoutY="37.0" text="Port：">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="jndiPort" layoutX="303.0" layoutY="32.0" prefHeight="35.0" prefWidth="97.0" />
+                        <Label fx:id="labelCommand" layoutX="412.0" layoutY="38.0" text="Command：">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="jndiCommand" layoutX="510.0" layoutY="32.0" />
+                        <Button layoutX="1032.0" layoutY="32.0" mnemonicParsing="false" onAction="#StartJndi" prefHeight="35.0" prefWidth="69.0" text="Start">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="1118.0" layoutY="32.0" mnemonicParsing="false" onAction="#CloseJndi" text="Close">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <CheckBox fx:id="jndiModeSelect" layoutX="750.0" layoutY="37.0" mnemonicParsing="false" text="MemShell">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </CheckBox>
+                        <TextArea fx:id="jndiTextArea" layoutX="14.0" layoutY="98.0" prefHeight="442.0" prefWidth="565.0" />
+                        <TextArea fx:id="logTextArea" layoutX="579.0" layoutY="98.0" prefHeight="442.0" prefWidth="607.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+          <Tab text="Generate">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="1200.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="6.0" layoutY="40.0" prefHeight="30.0" prefWidth="87.0" text="Server：" textAlignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="233.0" layoutY="41.0" prefHeight="30.0" prefWidth="121.0" text="Components：" textAlignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="GenerateServerBox" layoutX="80.0" layoutY="38.0" minHeight="0.0" minWidth="0.0" prefHeight="34.0" prefWidth="145.0">
+                        </ChoiceBox>
+                         <Label alignment="CENTER" layoutX="500.0" layoutY="41.0" prefHeight="30.0" prefWidth="100.0" text="Encoding：" textAlignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="737.0" layoutY="41.0" prefHeight="30.0" prefWidth="94.0" text="Compile：" textAlignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="GenerateEncodingBox" layoutX="598.0" layoutY="39.0" minHeight="0.0" minWidth="0.0" prefHeight="34.0" prefWidth="131.0" value="BASE64">
+                         <items>
+                             <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="BASE64" />
+                                 <String fx:value="BCEL" />
+                             </FXCollections>
+                         </items>
+                        </ChoiceBox>
+                        <Button layoutX="977.0" layoutY="38.0" mnemonicParsing="false" onAction="#Generate" prefHeight="27.0" prefWidth="110.0" text="Generate">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <ChoiceBox fx:id="GenerateComponentsBox" layoutX="354.0" layoutY="39.0" minHeight="0.0" minWidth="0.0" prefHeight="34.0" prefWidth="143.0">
+                        </ChoiceBox>
+                        <ChoiceBox fx:id="GenerateCompileBox" layoutX="831.0" layoutY="39.0" minHeight="0.0" minWidth="0.0" prefHeight="34.0" prefWidth="131.0" value="6">
+                         <items>
+                             <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="6" />
+                                 <String fx:value="7" />
+                                 <String fx:value="8" />
+                             </FXCollections>
+                         </items>
+                        </ChoiceBox>
+                        <Button layoutX="1105.0" layoutY="38.0" mnemonicParsing="false" onAction="#Clear" prefHeight="27.0" prefWidth="80.0" text="Clear">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <ScrollPane layoutX="19.0" layoutY="103.0" prefHeight="435.0" prefWidth="1165.0">
+                           <content>
+                              <TextArea fx:id="GenerateTextArea" prefHeight="433.0" prefWidth="1163.0" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

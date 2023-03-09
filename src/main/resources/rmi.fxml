@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+
+<TextArea fx:controller="jndi.RMIRefServer" fx:id="logTextArea" layoutX="579.0" layoutY="98.0" prefHeight="442.0" prefWidth="607.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
