@@ -1,5 +1,4 @@
 .idea/
-config/
 target/
 output/
 *.class
