@@ -75,7 +75,7 @@ public class OkHttp {
                 .writeTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
                 .readTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
                 .build();
-        okhttp3.Request.Builder requestBuilder = new Request.Builder();
+        Request.Builder requestBuilder = new Request.Builder();
         if (headers != null) {
             Iterator<Map.Entry<String, String>> iter = headers.entrySet().iterator();
             while (iter.hasNext()) {
@@ -123,7 +123,7 @@ public class OkHttp {
                 httpClient = buildOkHttpClient(proxyConfig);
             }
         }
-        okhttp3.Request.Builder requestBuilder = new Request.Builder();
+        Request.Builder requestBuilder = new Request.Builder();
         if (headers != null) {
             Iterator<Map.Entry<String, String>> iter = headers.entrySet().iterator();
             while (iter.hasNext()) {
@@ -155,7 +155,7 @@ public class OkHttp {
                 .readTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
                 .build();
         RequestBody requestBody = TyrRequestBody.create(mimeType, body, chunkCount);
-        okhttp3.Request.Builder requestBuilder = new Request.Builder();
+        Request.Builder requestBuilder = new Request.Builder();
         if (headers != null) {
             Iterator<Map.Entry<String, String>> iter = headers.entrySet().iterator();
             while (iter.hasNext()) {
@@ -205,7 +205,7 @@ public class OkHttp {
         }
         MediaType mimeType = MediaType.parse(mime);
         RequestBody requestBody = TyrRequestBody.create(mimeType, body, chunkCount);
-        okhttp3.Request.Builder requestBuilder = new Request.Builder();
+        Request.Builder requestBuilder = new Request.Builder();
         if (headers != null) {
             Iterator<Map.Entry<String, String>> iter = headers.entrySet().iterator();
             while (iter.hasNext()) {
@@ -234,7 +234,7 @@ public class OkHttp {
                 .setType(MultipartBody.FORM)
                 .addFormDataPart("file", file.getName(), requestBody)
                 .build();
-        okhttp3.Request.Builder requestBuilder = new Request.Builder();
+        Request.Builder requestBuilder = new Request.Builder();
         if (headers != null) {
             Iterator<Map.Entry<String, String>> iter = headers.entrySet().iterator();
             while (iter.hasNext()) {
@@ -288,7 +288,7 @@ public class OkHttp {
                 .setType(MultipartBody.FORM)
                 .addFormDataPart("file", file.getName(), requestBody)
                 .build();
-        okhttp3.Request.Builder requestBuilder = new Request.Builder();
+        Request.Builder requestBuilder = new Request.Builder();
         if (headers != null) {
             Iterator<Map.Entry<String, String>> iter = headers.entrySet().iterator();
             while (iter.hasNext()) {
@@ -313,7 +313,7 @@ public class OkHttp {
                 .readTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
                 .build();
         RequestBody requestBody = TyrRequestBody.create(mimeType, body, chunkCount);
-        okhttp3.Request.Builder requestBuilder = new Request.Builder();
+        Request.Builder requestBuilder = new Request.Builder();
         if (headers != null) {
             Iterator<Map.Entry<String, String>> iter = headers.entrySet().iterator();
             while (iter.hasNext()) {
@@ -363,7 +363,7 @@ public class OkHttp {
         }
         MediaType mimeType = MediaType.parse(mime);
         RequestBody requestBody = TyrRequestBody.create(mimeType, body, chunkCount);
-        okhttp3.Request.Builder requestBuilder = new Request.Builder();
+        Request.Builder requestBuilder = new Request.Builder();
         if (headers != null) {
             Iterator<Map.Entry<String, String>> iter = headers.entrySet().iterator();
             while (iter.hasNext()) {
@@ -388,7 +388,7 @@ public class OkHttp {
                 .readTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
                 .build();
         RequestBody requestBody = TyrRequestBody.create(mimeType, body, chunkCount);
-        okhttp3.Request.Builder requestBuilder = new Request.Builder();
+        Request.Builder requestBuilder = new Request.Builder();
         if (headers != null) {
             Iterator<Map.Entry<String, String>> iter = headers.entrySet().iterator();
             while (iter.hasNext()) {
@@ -438,7 +438,7 @@ public class OkHttp {
         }
         MediaType mimeType = MediaType.parse(mime);
         RequestBody requestBody = TyrRequestBody.create(mimeType, body, chunkCount);
-        okhttp3.Request.Builder requestBuilder = new Request.Builder();
+        Request.Builder requestBuilder = new Request.Builder();
         if (headers != null) {
             Iterator<Map.Entry<String, String>> iter = headers.entrySet().iterator();
             while (iter.hasNext()) {

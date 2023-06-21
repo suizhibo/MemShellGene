@@ -9,66 +9,12 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring.version>5.2.3.RELEASE</spring.version>
     </properties>
     <dependencies>
-        <dependency>
-            <groupId>memshell</groupId>
-            <artifactId>coherence-rest</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>memshell</groupId>
-            <artifactId>coherence</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>memshell</groupId>
-            <artifactId>coherence-web</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>memshell</groupId>
-            <artifactId>com.oracle.core.coherence.integration</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>memshell</groupId>
-            <artifactId>jsafeFIPS</artifactId>
-            <version>1.0</version>
-        </dependency>
-
-        <!--        <dependency>-->
-        <!--            <groupId>memshell</groupId>-->
-        <!--            <artifactId>wlfullclient</artifactId>-->
-        <!--            <version>1.0.0</version>-->
-        <!--        </dependency>-->
-        <dependency>
-            <groupId>memshell</groupId>
-            <artifactId>permit-reflect</artifactId>
-            <version>0.3</version>
-        </dependency>
-
-        <dependency>
-            <groupId>memshell</groupId>
-            <artifactId>wlclient</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>memshell</groupId>
-            <artifactId>resin</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>memshell</groupId>
-            <artifactId>wlcipher</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-
         <!-- https://mvnrepository.com/artifact/commons-cli/commons-cli -->
         <dependency>
             <groupId>commons-cli</groupId>
@@ -334,7 +280,6 @@
                     <source>6</source>
                     <target>6</target>
                 </configuration>
-
             </plugin>
 
         </plugins>
