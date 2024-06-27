@@ -53,7 +53,7 @@ java -jar MemShellGene.jar
 
 
 #### 内存马版本测试
-![12](https://github.com/suizhibo/MemShellGene/assets/28916595/93453e07-700c-418d-a880-6f85d1862c5b)
+
 
 
 
