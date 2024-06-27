@@ -66,7 +66,7 @@ java -jar MemShellGene.jar
 2. 访问触发路径，若response返回的Success,说明内存马注入成功
 
 
-#### 上线须知：
+#### 上线哥斯拉须知：
 
 1. 密码: pAS3
 
