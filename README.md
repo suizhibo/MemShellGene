@@ -48,11 +48,13 @@ java -jar MemShellGene.jar
 
 该模块涉及到ava的动态编译，需要正确配置java classpath，并确认该目录下的lib目录包含tools.jar。
 使用该模块可以快速生成内存马的BASE64或者BCEL字符串。
-![86bc73a1bbdb189912319f3e27afc060.png](en-resource://database/535:1)
+![1111111111](https://github.com/suizhibo/MemShellGene/assets/28916595/ddfcc2a9-dd20-4175-8485-2139e79bb600)
+
 
 
 #### 内存马版本测试
-![d28b0c6bdad42b1453170a10aeb8cd75.png](en-resource://database/534:1)
+![12](https://github.com/suizhibo/MemShellGene/assets/28916595/93453e07-700c-418d-a880-6f85d1862c5b)
+
 
 
 
@@ -69,6 +71,9 @@ java -jar MemShellGene.jar
 2. 秘钥: key
 
 3. Header：X-Requested-With: XMLHTTPRequest
+
+   ![图片1](https://github.com/suizhibo/MemShellGene/assets/28916595/e6d8a13b-b0f7-4562-84a0-af57e774beb5)
+
 
 
 
