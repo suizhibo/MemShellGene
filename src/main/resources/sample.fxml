@@ -45,49 +45,49 @@
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab text="JNDI">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <Label layoutX="18.0" layoutY="37.0" text="IP：">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="jndiIP" layoutX="56.0" layoutY="32.0" prefHeight="35.0" prefWidth="185.0" />
-                        <Label layoutX="254.0" layoutY="37.0" text="Port：">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="jndiPort" layoutX="303.0" layoutY="32.0" prefHeight="35.0" prefWidth="97.0" />
-                        <Label fx:id="labelCommand" layoutX="412.0" layoutY="38.0" text="Command：">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="jndiCommand" layoutX="510.0" layoutY="32.0" />
-                        <Button layoutX="1032.0" layoutY="32.0" mnemonicParsing="false" onAction="#StartJndi" prefHeight="35.0" prefWidth="69.0" text="Start">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Button>
-                        <Button layoutX="1118.0" layoutY="32.0" mnemonicParsing="false" onAction="#CloseJndi" text="Close">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Button>
-                        <CheckBox fx:id="jndiModeSelect" layoutX="750.0" layoutY="37.0" mnemonicParsing="false" text="MemShell">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </CheckBox>
-                        <TextArea fx:id="jndiTextArea" layoutX="14.0" layoutY="98.0" prefHeight="442.0" prefWidth="565.0" />
-                        <TextArea fx:id="logTextArea" layoutX="579.0" layoutY="98.0" prefHeight="442.0" prefWidth="607.0" />
-                     </children>
-                  </AnchorPane>
-               </content>
-            </Tab>
+<!--            <Tab text="JNDI">-->
+<!--               <content>-->
+<!--                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">-->
+<!--                     <children>-->
+<!--                        <Label layoutX="18.0" layoutY="37.0" text="IP：">-->
+<!--                           <font>-->
+<!--                              <Font size="18.0" />-->
+<!--                           </font>-->
+<!--                        </Label>-->
+<!--                        <TextField fx:id="jndiIP" layoutX="56.0" layoutY="32.0" prefHeight="35.0" prefWidth="185.0" />-->
+<!--                        <Label layoutX="254.0" layoutY="37.0" text="Port：">-->
+<!--                           <font>-->
+<!--                              <Font size="18.0" />-->
+<!--                           </font>-->
+<!--                        </Label>-->
+<!--                        <TextField fx:id="jndiPort" layoutX="303.0" layoutY="32.0" prefHeight="35.0" prefWidth="97.0" />-->
+<!--                        <Label fx:id="labelCommand" layoutX="412.0" layoutY="38.0" text="Command：">-->
+<!--                           <font>-->
+<!--                              <Font size="18.0" />-->
+<!--                           </font>-->
+<!--                        </Label>-->
+<!--                        <TextField fx:id="jndiCommand" layoutX="510.0" layoutY="32.0" />-->
+<!--                        <Button layoutX="1032.0" layoutY="32.0" mnemonicParsing="false" onAction="#StartJndi" prefHeight="35.0" prefWidth="69.0" text="Start">-->
+<!--                           <font>-->
+<!--                              <Font size="18.0" />-->
+<!--                           </font>-->
+<!--                        </Button>-->
+<!--                        <Button layoutX="1118.0" layoutY="32.0" mnemonicParsing="false" onAction="#CloseJndi" text="Close">-->
+<!--                           <font>-->
+<!--                              <Font size="18.0" />-->
+<!--                           </font>-->
+<!--                        </Button>-->
+<!--                        <CheckBox fx:id="jndiModeSelect" layoutX="750.0" layoutY="37.0" mnemonicParsing="false" text="MemShell">-->
+<!--                           <font>-->
+<!--                              <Font size="18.0" />-->
+<!--                           </font>-->
+<!--                        </CheckBox>-->
+<!--                        <TextArea fx:id="jndiTextArea" layoutX="14.0" layoutY="98.0" prefHeight="442.0" prefWidth="565.0" />-->
+<!--                        <TextArea fx:id="logTextArea" layoutX="579.0" layoutY="98.0" prefHeight="442.0" prefWidth="607.0" />-->
+<!--                     </children>-->
+<!--                  </AnchorPane>-->
+<!--               </content>-->
+<!--            </Tab>-->
           <Tab text="Generate">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="1200.0">
