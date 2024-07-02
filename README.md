@@ -76,7 +76,8 @@ java -jar MemShellGene.jar
 
    ![图片1](https://github.com/suizhibo/MemShellGene/assets/28916595/e6d8a13b-b0f7-4562-84a0-af57e774beb5)
 
-
+### 内存马查杀
+[MemShellKiller](https://github.com/suizhibo/MemShellKiller)
 
 # 免责声明
 1. 娱乐用途优先：本工具设计的初衷是为了教育、研究和娱乐目的。它可以帮助您了解网络安全的基础知识，提升您的技能，以及在合法范围内进行测试。
