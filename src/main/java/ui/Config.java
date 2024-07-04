@@ -19,6 +19,7 @@ public class Config {
 
     public static List<String> serverNameList = Arrays.asList(
             "Tomcat",
+            "TongWeb",
             "Weblogic",
             "Spring",
             "Netty",
@@ -65,6 +66,7 @@ public class Config {
     static {
         serverComponent.put("Spring", Arrays.asList("Boot", "Controller", "Interceptor", "WebfluxHandler"));
         serverComponent.put("Tomcat", Arrays.asList("Filter", "Listener"));
+        serverComponent.put("TongWeb", Arrays.asList("Filter", "Listener"));
         serverComponent.put("WebSphere", Arrays.asList("Filter"));
         serverComponent.put("Netty", Arrays.asList("Handler"));
 
